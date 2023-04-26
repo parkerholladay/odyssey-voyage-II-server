@@ -1,6 +1,6 @@
 const { RESTDataSource } = require('@apollo/datasource-rest');
 
-class AccountsAPI extends RESTDataSource {
+class AccountsApi extends RESTDataSource {
   baseURL = 'http://localhost:4011/';
 
   login(username) {
@@ -16,4 +16,4 @@ class AccountsAPI extends RESTDataSource {
   }
 }
 
-module.exports = AccountsAPI;
+module.exports = AccountsApi;

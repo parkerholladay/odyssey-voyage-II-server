@@ -11,6 +11,12 @@ concurrently(
     },
     {
       command: 'npm install',
+      name: 'subgraph-accounts',
+      cwd: path.resolve(__dirname, '../../subgraph-accounts'),
+      prefixColor: 'cyan',
+    },
+    {
+      command: 'npm install',
       name: 'listings',
       cwd: path.resolve(__dirname, '../../services/listings'),
       prefixColor: 'magenta',

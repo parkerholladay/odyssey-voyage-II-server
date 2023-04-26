@@ -10,6 +10,12 @@ concurrently(
     },
     {
       command: 'npm start',
+      name: 'subgraph-accounts',
+      cwd: path.resolve(__dirname, '../../subgraph-accounts'),
+      prefixColor: 'cyan',
+    },
+    {
+      command: 'npm start',
       name: 'listings',
       cwd: path.resolve(__dirname, '../../services/listings'),
       prefixColor: 'magenta',

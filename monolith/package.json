@@ -8,11 +8,12 @@
     "node": ">=14.0.0 <=18"
   },
   "scripts": {
-    "start": "nodemon index.js",
+    "db:reset": "node utils/reset.js",
     "launch": "node utils/launch.js",
-    "postinstall": "npm run install-services",
     "install-services": "node utils/install.js",
-    "db:reset": "node utils/reset.js"
+    "postinstall": "npm run install-services",
+    "publish": "rover subgraph publish derping-ii@current",
+    "start": "nodemon index.js"
   },
   "nodemonConfig": {
     "ext": "*.js, *.graphql"
@@ -23,6 +24,7 @@
   "dependencies": {
     "@apollo/datasource-rest": "^4.3.2",
     "@apollo/server": "^4.0.1",
+    "@apollo/subgraph": "^2.4.2",
     "apollo-datasource": "^3.1.0",
     "axios": "^0.27.2",
     "concurrently": "^6.3.0",
