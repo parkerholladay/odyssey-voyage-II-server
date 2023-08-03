@@ -21,6 +21,12 @@ concurrently(
       prefixColor: 'magenta',
     },
     {
+      command: 'npm start',
+      name: 'subgraph-listings',
+      cwd: path.resolve(__dirname, '../../subgraph-listings'),
+      prefixColor: 'red',
+    },
+    {
       command: 'npm run booking:update',
       name: 'bookings',
       cwd: path.resolve(__dirname, '../../services/bookings'),
