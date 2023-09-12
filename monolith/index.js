@@ -30,7 +30,10 @@ async function startApolloServer() {
     const { url } = await startStandaloneServer(server, {
       context: async ({ req }) => {
         const token = req.headers.authorization || '';
-        const userId = token.split(' ')[1]; // get the user name after 'Bearer '
+        let userId = token.split('Bearer ')[1]; // get the user name after 'Bearer '
+        if (!userId) {
+          userId = req.headers.user_id;
+        }
 
         let userInfo = {};
         if (userId) {

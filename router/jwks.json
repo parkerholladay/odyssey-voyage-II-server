@@ -1,0 +1,9 @@
+{
+  "keys": [{
+      "kty": "oct",
+      "alg": "HS256",
+      "kid": "its-dangerous-to-go-alone-take-this",
+      "use": "sig",
+      "k": "aXRzLWEtc2VjcmV0LXRvLWV2ZXJ5Ym9keQ=="
+  }]
+}

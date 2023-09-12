@@ -4,6 +4,12 @@ concurrently(
   [
     {
       command: 'npm start',
+      name: 'monolith',
+      cwd: path.resolve(__dirname),
+      prefixColor: 'yellow',
+    },
+    {
+      command: 'npm start',
       name: 'accounts',
       cwd: path.resolve(__dirname, '../../services/accounts'),
       prefixColor: 'blue',

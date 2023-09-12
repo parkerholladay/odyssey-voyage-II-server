@@ -1,3 +1,8 @@
+authentication:
+  router:
+    jwt:
+      jwks:
+        - url: file:///home/parker/dev/external/odyssey-voyage-II-server/router/jwks.json
 cors:
   origins:
     - http://localhost:3000
@@ -6,6 +11,18 @@ headers:
   all:
     request:
       - propagate:
-          named: Authorization
+          named: user_id
+      - propagate:
+          named: herp
+      - propagate:
+          named: foo
+homepage:
+  enabled: false
 include_subgraph_errors:
-  all: true # Propagate errors from all subgraphs
+  all: true
+rhai:
+  scripts: ./rhai
+sandbox:
+  enabled: true
+supergraph:
+  introspection: true

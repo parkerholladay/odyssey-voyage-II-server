@@ -31,12 +31,13 @@ app.get('/listings', async (req, res) => {
         [gte]: minNumOfBeds,
       },
     },
+    include: listingsDb.Amenity,
     order: [sortOrder],
     limit: parseInt(limit, 10),
     offset: skipValue,
   });
 
-  return res.json(listings);
+  return res.json(listings.map(l => transformListingWithAmenities(l)));
 });
 
 // get 3 featured listings
@@ -46,10 +47,11 @@ app.get('/featured-listings', async (req, res) => {
     where: {
       isFeatured: true,
     },
+    include: listingsDb.Amenity,
     limit,
   });
 
-  return res.json(listings);
+  return res.json(listings.map(l => transformListingWithAmenities(l)));
 });
 // get all listings for a specific user
 app.get('/user/:userId/listings', async (req, res) => {
